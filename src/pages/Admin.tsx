@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import InventoryManagement from "@/components/admin/InventoryManagement";
 import CategoryManagement from "@/components/admin/CategoryManagement";
+import RepositoryManagement from "@/components/admin/RepositoryManagement";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const ADMIN_USER = "ShopSphereAdmin";
@@ -19,14 +20,15 @@ export default function Admin() {
   const navigate = useNavigate();
   const location = useLocation();
   
-  const getActiveViewFromUrl = (): "dashboard" | "inventory" | "categories" => {
+  const getActiveViewFromUrl = (): "dashboard" | "inventory" | "categories" | "repository" => {
     const hash = location.hash.replace('#', '');
     if (hash === 'inventory') return 'inventory';
     if (hash === 'categories') return 'categories';
+    if (hash === 'repository') return 'repository';
     return 'dashboard';
   };
   
-  const [activeView, setActiveView] = useState<"dashboard" | "inventory" | "categories">(getActiveViewFromUrl());
+  const [activeView, setActiveView] = useState<"dashboard" | "inventory" | "categories" | "repository">(getActiveViewFromUrl());
 
   const isSessionValid = (): boolean => {
     const loginTime = localStorage.getItem("shopsphere-admin-login-time");
@@ -53,12 +55,14 @@ export default function Admin() {
     localStorage.removeItem("shopsphere-admin-login-time");
   };
 
-  const setActiveViewWithUrl = (view: "dashboard" | "inventory" | "categories") => {
+  const setActiveViewWithUrl = (view: "dashboard" | "inventory" | "categories" | "repository") => {
     setActiveView(view);
     if (view === "inventory") {
       navigate('/admin#inventory');
     } else if (view === "categories") {
       navigate('/admin#categories');
+    } else if (view === "repository") {
+      navigate('/admin#repository');
     } else {
       navigate('/admin');
     }
@@ -101,6 +105,16 @@ export default function Admin() {
       );
     }
 
+    if (activeView === "repository") {
+      return (
+        <div className="min-h-screen pt-16 bg-primary/5">
+          <div className="container mx-auto px-4 py-8">
+            <RepositoryManagement onClose={() => setActiveViewWithUrl("dashboard")} />
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="min-h-screen pt-16 bg-primary/5">
         <div className="container mx-auto px-4 py-8">
@@ -120,10 +134,24 @@ export default function Admin() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-foreground/70">
-                    Manage perfumes, stock, prices and descriptions.
+                    Manage perfumes currently <b>IN STOCK</b> and visible in the shop.
                   </p>
                   <Button className="w-full" onClick={() => setActiveViewWithUrl("inventory")}>
-                    Manage Fragrances
+                    Manage In-Stock
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card/50 backdrop-blur-sm border-primary/20 neon-glow">
+                <CardHeader>
+                  <CardTitle className="text-primary">Fragrance Repository</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-foreground/70">
+                    Your master library of all fragrances. Add them to stock when needed.
+                  </p>
+                  <Button className="w-full" variant="secondary" onClick={() => setActiveViewWithUrl("repository")}>
+                    Browse Repository
                   </Button>
                 </CardContent>
               </Card>
@@ -136,7 +164,7 @@ export default function Admin() {
                   <p className="text-foreground/70">
                     Manage categories (Men's, Women's, etc.)
                   </p>
-                  <Button className="w-full" onClick={() => setActiveViewWithUrl("categories")}>
+                  <Button className="w-full" variant="outline" onClick={() => setActiveViewWithUrl("categories")}>
                     Manage Categories
                   </Button>
                 </CardContent>

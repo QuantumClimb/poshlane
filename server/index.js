@@ -774,13 +774,181 @@ app.post('/api/admin/upload-image', (req, res) => {
   });
 });
 
+// ADMIN ENDPOINTS - Fragrance Repository Management
+
+// Get all repository items (with pagination and search)
+app.get('/api/admin/repository', async (req, res) => {
+  try {
+    if (!(await ensureDbConnection())) {
+      return res.status(503).json({ error: 'Database unavailable' });
+    }
+    const { page = 1, limit = 20, category, q } = req.query;
+    const offset = (Number.parseInt(page) - 1) * Number.parseInt(limit);
+    
+    const where = {};
+    if (category && category !== 'all') {
+      where.category = { name: category };
+    }
+    if (q) {
+      where.OR = [
+        { name: { contains: q, mode: 'insensitive' } },
+        { brand: { contains: q, mode: 'insensitive' } },
+        { description: { contains: q, mode: 'insensitive' } }
+      ];
+    }
+
+    const [items, totalCount] = await Promise.all([
+      prisma.masterFragrance.findMany({
+        where,
+        include: { category: true },
+        skip: offset,
+        take: Number.parseInt(limit),
+        orderBy: { name: 'asc' }
+      }),
+      prisma.masterFragrance.count({ where })
+    ]);
+
+    res.json({
+      items: items.map(item => ({
+        ...item,
+        category: item.category.name,
+        id: item.id.toString()
+      })),
+      totalPages: Math.ceil(totalCount / Number.parseInt(limit)),
+      totalCount
+    });
+  } catch (error) {
+    console.error('Error fetching repository:', error);
+    res.status(500).json({ error: 'Failed to fetch repository' });
+  }
+});
+
+// Create new repository item
+app.post('/api/admin/repository', async (req, res) => {
+  try {
+    if (!(await ensureDbConnection())) {
+      return res.status(503).json({ error: 'Database unavailable' });
+    }
+    const data = req.body;
+    const newItem = await prisma.masterFragrance.create({
+      data: {
+        ...data,
+        price: data.price ? Number.parseFloat(data.price) : null,
+        volume: data.volume ? Number.parseFloat(data.volume) : null,
+        categoryId: Number.parseInt(data.categoryId)
+      },
+      include: { category: true }
+    });
+    res.status(201).json({ ...newItem, category: newItem.category.name, id: newItem.id.toString() });
+  } catch (error) {
+    console.error('Error creating repository item:', error);
+    res.status(500).json({ error: 'Failed to create repository item' });
+  }
+});
+
+// Update repository item
+app.put('/api/admin/repository/:id', async (req, res) => {
+  try {
+    if (!(await ensureDbConnection())) {
+      return res.status(503).json({ error: 'Database unavailable' });
+    }
+    const { id } = req.params;
+    const data = req.body;
+    const updatedItem = await prisma.masterFragrance.update({
+      where: { id: Number.parseInt(id) },
+      data: {
+        ...data,
+        id: undefined, // Don't update ID
+        price: data.price ? Number.parseFloat(data.price) : null,
+        volume: data.volume ? Number.parseFloat(data.volume) : null,
+        categoryId: Number.parseInt(data.categoryId),
+        category: undefined // Don't update relation object directly
+      },
+      include: { category: true }
+    });
+    res.json({ ...updatedItem, category: updatedItem.category.name, id: updatedItem.id.toString() });
+  } catch (error) {
+    console.error('Error updating repository item:', error);
+    res.status(500).json({ error: 'Failed to update repository item' });
+  }
+});
+
+// Delete repository item
+app.delete('/api/admin/repository/:id', async (req, res) => {
+  try {
+    if (!(await ensureDbConnection())) {
+      return res.status(503).json({ error: 'Database unavailable' });
+    }
+    const { id } = req.params;
+    await prisma.masterFragrance.delete({
+      where: { id: Number.parseInt(id) }
+    });
+    res.json({ message: 'Repository item deleted' });
+  } catch (error) {
+    console.error('Error deleting repository item:', error);
+    res.status(500).json({ error: 'Failed to delete repository item' });
+  }
+});
+
+// Add from repository to inventory (Cloning)
+app.post('/api/admin/inventory/add-from-repository/:id', async (req, res) => {
+  try {
+    if (!(await ensureDbConnection())) {
+      return res.status(503).json({ error: 'Database unavailable' });
+    }
+    const { id } = req.params;
+    const { stockQuantity = 0, price } = req.body;
+
+    const master = await prisma.masterFragrance.findUnique({
+      where: { id: Number.parseInt(id) }
+    });
+
+    if (!master) {
+      return res.status(404).json({ error: 'Master fragrance not found' });
+    }
+
+    const newItem = await prisma.product.create({
+      data: {
+        name: master.name,
+        brand: master.brand,
+        description: master.description || '',
+        price: price ? Number.parseFloat(price) : (master.price || 0),
+        volume: master.volume,
+        concentration: master.concentration,
+        gender: master.gender,
+        fragranceFamily: master.fragranceFamily,
+        topNotes: master.topNotes,
+        middleNotes: master.middleNotes,
+        baseNotes: master.baseNotes,
+        stockQuantity: Number.parseInt(stockQuantity),
+        inStock: Number.parseInt(stockQuantity) > 0,
+        categoryId: master.categoryId,
+        imageUrl: master.imageUrl,
+        imageData: master.imageData,
+        imageMimeType: master.imageMimeType,
+        imageSize: master.imageSize,
+        masterFragranceId: master.id
+      },
+      include: { category: true }
+    });
+
+    res.status(201).json({ ...newItem, category: newItem.category.name, id: newItem.id.toString() });
+  } catch (error) {
+    console.error('Error adding to inventory:', error);
+    res.status(500).json({ error: 'Failed to add fragrance to inventory' });
+  }
+});
+
 // Get all menu items for admin (with pagination)
 app.get('/api/admin/menu-items', async (req, res) => {
   try {
+    if (!(await ensureDbConnection())) {
+      return res.status(503).json({ error: 'Database unavailable' });
+    }
     const { page = 1, limit = 10, category } = req.query;
-    const offset = (page - 1) * limit;
+    const offset = (Number.parseInt(page) - 1) * Number.parseInt(limit);
     
-    const where = category ? {
+    const where = category && category !== 'all' ? {
       category: {
         name: {
           equals: category,
