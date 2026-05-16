@@ -18,7 +18,7 @@ export const Footer = () => {
                 alt="LUXURY LINE Logo" 
                 className="h-12 w-12 object-contain"
               />
-              <span className="text-3xl font-bold text-gray-900 dark:text-gray-500" style={{ fontFamily: 'Forum, serif' }}>LUXURY LINE</span>
+              <span className="text-3xl font-bold text-gray-900 dark:text-gray-500">LUXURY LINE</span>
             </div>
             <p className="mb-6 max-w-md mx-auto md:mx-0 text-gray-600 dark:text-gray-500">
               {t('footer.aboutText')}

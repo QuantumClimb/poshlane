@@ -115,7 +115,7 @@ const MenuItemCard = ({ item, placeholderImg, isStoreClosed }: { item: MenuItem,
         onClick={() => setShowModal(true)}
       >
         {/* Product Image */}
-        <div className="relative h-40 overflow-hidden">
+        <div className="relative aspect-[3/4] overflow-hidden">
           <img
             src={imageUrl}
             alt={displayName}
@@ -152,7 +152,7 @@ const MenuItemCard = ({ item, placeholderImg, isStoreClosed }: { item: MenuItem,
           
           <div className="space-y-4">
             {/* Product Image */}
-            <div className="relative h-64 overflow-hidden rounded-lg">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
               <img
                 src={imageUrl}
                 alt={displayName}
@@ -262,7 +262,7 @@ const MenuItemCard = ({ item, placeholderImg, isStoreClosed }: { item: MenuItem,
       {/* Desktop Layout - Vertical Card */}
       <Card className="hidden md:block rounded-xl md:rounded-3xl bg-card/50 backdrop-blur-sm border-primary/20 neon-glow overflow-hidden group menu-item-card">
         {/* Product Image */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative aspect-[3/4] overflow-hidden">
           <img
             src={imageUrl}
             alt={displayName}

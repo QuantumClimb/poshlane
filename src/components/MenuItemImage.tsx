@@ -8,9 +8,9 @@ interface MenuItemImageProps {
 }
 
 const sizeMap = {
-  small: 'w-16 h-16',    // 64px - Cart drawer
-  medium: 'w-20 h-20',   // 80px - Checkout
-  large: 'w-28 h-28',    // 112px - Order confirmation
+  small: 'w-16 h-20',    // Portrait - Cart drawer
+  medium: 'w-20 h-28',   // Portrait - Checkout
+  large: 'w-28 h-40',    // Portrait - Order confirmation
 };
 
 export const MenuItemImage: React.FC<MenuItemImageProps> = ({ 

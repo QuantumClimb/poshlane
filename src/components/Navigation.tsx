@@ -58,7 +58,7 @@ export const Navigation = () => {
                 className="h-14 w-14 md:h-12 md:w-12 object-contain drop-shadow-md"
                 loading="eager"
               />
-              <span className="text-2xl font-bold hidden md:inline text-gray-900 dark:text-gray-500" style={{ fontFamily: 'Forum, serif' }}>LUXURY LINE</span>
+              <span className="text-2xl font-bold hidden md:inline text-gray-900 dark:text-gray-500">LUXURY LINE</span>
             </Link>
           </div>
           

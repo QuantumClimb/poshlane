@@ -384,7 +384,7 @@ export default function InventoryManagement({ onClose }: InventoryManagementProp
               {items.map((item) => (
                 <TableRow key={item.id}>
                   <TableCell>
-                    <div className="w-12 h-12 rounded border bg-muted/20 flex items-center justify-center overflow-hidden">
+                    <div className="w-12 h-16 rounded border bg-muted/20 flex items-center justify-center overflow-hidden">
                       {item.imageUrl ? <img src={`${SERVER_BASE_URL}${item.imageUrl}`} className="w-full h-full object-contain p-1" /> : <Search className="w-4 h-4 opacity-20" />}
                     </div>
                   </TableCell>

@@ -78,9 +78,9 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				'sans': ['Manrope', 'system-ui', 'sans-serif'],
-				'serif': ['Forum', 'serif'],
-				'mono': ['DM Mono', 'monospace']
+				'sans': ['IBM Plex Sans', 'system-ui', 'sans-serif'],
+				'serif': ['IBM Plex Sans', 'serif'],
+				'mono': ['IBM Plex Sans', 'monospace']
 			},
 			keyframes: {
 				'accordion-down': {
