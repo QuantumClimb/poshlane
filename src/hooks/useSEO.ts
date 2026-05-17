@@ -69,7 +69,7 @@ export const useSEO = ({
 
     // Cleanup function to reset to default on unmount
     return () => {
-      document.title = 'LUXURY LINE';
+      document.title = 'LuxuryLine';
     };
   }, [title, description, keywords, ogTitle, ogDescription, ogImage, canonicalUrl]);
 };

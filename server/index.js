@@ -1,4 +1,4 @@
-// server/index.js - Express API server for Luxury Line (LUXURY LINE)
+// server/index.js - Express API server for LuxuryLine (LuxuryLine)
 import express from 'express';
 import cors from 'cors';
 import multer from 'multer';

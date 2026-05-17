@@ -51,14 +51,14 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 md:h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3" aria-label="LUXURY LINE Home">
+            <Link to="/" className="flex items-center space-x-3" aria-label="LuxuryLine Home">
               <img
                 src="/logo.png"
-                alt="LUXURY LINE Logo"
+                alt="LuxuryLine Logo"
                 className="h-14 w-14 md:h-12 md:w-12 object-contain drop-shadow-md"
                 loading="eager"
               />
-              <span className="text-2xl font-bold hidden md:inline text-gray-900 dark:text-gray-500">LUXURY LINE</span>
+              <span className="text-2xl font-bold hidden md:inline text-gray-500">LuxuryLine</span>
             </Link>
           </div>
           

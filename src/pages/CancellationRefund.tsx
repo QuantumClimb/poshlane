@@ -12,7 +12,7 @@ const CancellationRefund = () => {
                 <strong>Last Updated:</strong> November 3, 2025
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                At LUXURY LINE, we want you to be completely satisfied with your order. 
+                At LuxuryLine, we want you to be completely satisfied with your order. 
                 This policy outlines our procedures for order cancellations and refunds.
               </p>
             </CardContent>
