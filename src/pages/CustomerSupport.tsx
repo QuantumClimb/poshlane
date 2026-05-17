@@ -24,7 +24,7 @@ const CustomerSupport = () => {
             </CardContent>
           </Card>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-1 max-w-xl mx-auto gap-6">
             <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -33,27 +33,13 @@ const CustomerSupport = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold text-primary mb-2">+351 920 617 185</p>
+                <p className="text-2xl font-bold text-primary mb-2">+91 98840 50857</p>
                 <p className="text-foreground/70">
                   {t('customerSupport.callDescription')}
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-primary" />
-                  {t('customerSupport.emailUs')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-xl font-semibold text-primary mb-2">support@luxury-line.app</p>
-                <p className="text-foreground/70">
-                  {t('customerSupport.emailDescription')}
-                </p>
-              </CardContent>
-            </Card>
           </div>
 
           <Card className="bg-card/50 backdrop-blur-sm border-primary/20">

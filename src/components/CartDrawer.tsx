@@ -157,7 +157,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       `Please let me know the next steps for payment and delivery address. Thank you!`
     );
     
-    window.open(`https://wa.me/919789909362?text=${message}`, '_blank');
+    window.open(`https://wa.me/919884050857?text=${message}`, '_blank');
     setOpen(false);
   };
 
