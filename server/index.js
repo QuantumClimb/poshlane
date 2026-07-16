@@ -1,4 +1,4 @@
-// server/index.js - Express API server for LuxuryLine (LuxuryLine)
+// server/index.js - Express API server for poshlane (poshlane)
 import express from 'express';
 import cors from 'cors';
 import multer from 'multer';

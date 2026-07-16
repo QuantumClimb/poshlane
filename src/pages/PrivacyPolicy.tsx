@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
                 <strong>Last Updated:</strong> November 3, 2025
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                At LuxuryLine, we are committed to protecting your privacy and personal information. 
+                At poshlane, we are committed to protecting your privacy and personal information. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when 
                 you use our website and services.
               </p>

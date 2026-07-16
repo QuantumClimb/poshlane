@@ -12,7 +12,7 @@ const TermsConditions = () => {
                 <strong>Last Updated:</strong> November 3, 2025
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                Welcome to LuxuryLine. By accessing and using our website and services, 
+                Welcome to poshlane. By accessing and using our website and services, 
                 you agree to be bound by these Terms and Conditions. Please read them carefully.
               </p>
             </CardContent>
@@ -25,7 +25,7 @@ const TermsConditions = () => {
             <CardContent className="space-y-3 text-foreground/80 leading-relaxed">
               <p>
                 These terms govern your use of our website, online ordering system, and services provided by 
-                LuxuryLine, located at R. Agostinho Lourenço 339, 1000-011 Lisboa, Portugal.
+                poshlane, located at R. Agostinho Lourenço 339, 1000-011 Lisboa, Portugal.
               </p>
               <p>
                 By placing an order, you confirm that you are at least 18 years of age and have the legal 
@@ -119,7 +119,7 @@ const TermsConditions = () => {
             <CardContent className="space-y-3 text-foreground/80 leading-relaxed">
               <p>
                 All content on our website, including text, images, logos, and design elements, is the property 
-                of LuxuryLine or its licensors and is protected by copyright and trademark laws.
+                of poshlane or its licensors and is protected by copyright and trademark laws.
               </p>
               <p>
                 You may not reproduce, distribute, modify, or create derivative works from any content without 
@@ -134,7 +134,7 @@ const TermsConditions = () => {
             </CardHeader>
             <CardContent className="space-y-3 text-foreground/80 leading-relaxed">
               <p>
-                To the fullest extent permitted by law, LuxuryLine shall not be liable for any indirect, 
+                To the fullest extent permitted by law, poshlane shall not be liable for any indirect, 
                 incidental, special, or consequential damages arising from your use of our services.
               </p>
               <p>

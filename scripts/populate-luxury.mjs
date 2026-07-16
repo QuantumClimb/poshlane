@@ -343,7 +343,7 @@ const fragrances = [
 ];
 
 async function main() {
-  console.log('🌸 Starting LuxuryLine Database Population...');
+  console.log('🌸 Starting poshlane Database Population...');
 
   try {
     // 1. Create categories
@@ -397,7 +397,7 @@ async function main() {
       console.log(`✅ Populated: ${f.brand} ${f.name}`);
     }
 
-    console.log('🎉 LuxuryLine is ready for business!');
+    console.log('🎉 poshlane is ready for business!');
   } catch (error) {
     console.error('❌ Error during population:', error);
   } finally {

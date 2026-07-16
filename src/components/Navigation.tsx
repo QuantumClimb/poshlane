@@ -51,14 +51,14 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 md:h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3" aria-label="LuxuryLine Home">
+            <Link to="/" className="flex items-center space-x-3" aria-label="poshlane Home">
               <img
                 src="/logo.png"
-                alt="LuxuryLine Logo"
+                alt="poshlane Logo"
                 className="h-14 w-14 md:h-12 md:w-12 object-contain drop-shadow-md"
                 loading="eager"
               />
-              <span className="text-2xl font-bold hidden md:inline text-gray-500">LuxuryLine</span>
+              <span className="text-2xl font-bold hidden md:inline text-gray-500">poshlane</span>
             </Link>
           </div>
           
