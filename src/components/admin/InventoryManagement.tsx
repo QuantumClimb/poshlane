@@ -127,10 +127,29 @@ export default function InventoryManagement({ onClose }: InventoryManagementProp
     const file = event.target.files?.[0];
     if (!file) return;
 
-    setImageFile(file);
+    // File size check (2MB limit)
+    if (file.size > 2 * 1024 * 1024) {
+      setError("Image must be smaller than 2MB");
+      event.target.value = ""; // clear input
+      return;
+    }
+
     const reader = new FileReader();
-    reader.onload = () => {
-      setImagePreview(reader.result as string);
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        // Dimensions check (e.g., max 1500x1500px)
+        if (img.width > 1500 || img.height > 1500) {
+          setError(`Image is too large (${img.width}x${img.height}). Maximum allowed dimensions are 1500x1500px.`);
+          event.target.value = ""; // clear input
+          return;
+        }
+        
+        setImageFile(file);
+        setImagePreview(reader.result as string);
+        setError(null);
+      };
+      img.src = e.target?.result as string;
     };
     reader.readAsDataURL(file);
   };
