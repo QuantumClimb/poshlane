@@ -13,17 +13,28 @@ export const Footer = () => {
           {/* Logo and Brand */}
           <div className="col-span-1 md:col-span-2 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
+              {/* Light Mode Logos */}
               <img 
                 src="/logo.svg" 
                 alt="poshlane Logo Mobile" 
-                className="h-12 w-12 object-contain block md:hidden"
+                className="h-12 w-12 object-contain block md:hidden dark:hidden"
               />
               <img 
                 src="/logo-desktop.svg" 
                 alt="poshlane Logo Desktop" 
-                className="h-12 w-auto max-w-[200px] object-contain hidden md:block"
+                className="h-12 w-auto max-w-[200px] object-contain hidden md:block dark:hidden"
               />
-              <span className="text-3xl font-bold text-gray-500">poshlane</span>
+              {/* Dark Mode Logos */}
+              <img 
+                src="/logo-dark.svg" 
+                alt="poshlane Logo Mobile Dark" 
+                className="h-12 w-12 object-contain hidden dark:block dark:md:hidden"
+              />
+              <img 
+                src="/logo-desktop-dark.svg" 
+                alt="poshlane Logo Desktop Dark" 
+                className="h-12 w-auto max-w-[200px] object-contain hidden dark:md:block"
+              />
             </div>
             <p className="mb-6 max-w-md mx-auto md:mx-0 text-gray-600 dark:text-gray-500">
               {t('footer.aboutText')}

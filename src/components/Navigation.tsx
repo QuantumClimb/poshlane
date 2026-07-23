@@ -52,19 +52,32 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20 md:h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3" aria-label="poshlane Home">
+              {/* Light Mode Logos */}
               <img
                 src="/logo.svg"
                 alt="poshlane Logo Mobile"
-                className="h-14 w-14 object-contain drop-shadow-md block md:hidden"
+                className="h-14 w-14 object-contain drop-shadow-md block md:hidden dark:hidden"
                 loading="eager"
               />
               <img
                 src="/logo-desktop.svg"
                 alt="poshlane Logo Desktop"
-                className="h-12 w-auto max-w-[200px] object-contain drop-shadow-md hidden md:block"
+                className="h-12 w-auto max-w-[200px] object-contain drop-shadow-md hidden md:block dark:hidden"
                 loading="eager"
               />
-              <span className="text-2xl font-bold hidden md:inline text-gray-500">poshlane</span>
+              {/* Dark Mode Logos */}
+              <img
+                src="/logo-dark.svg"
+                alt="poshlane Logo Mobile Dark"
+                className="h-14 w-14 object-contain drop-shadow-md hidden dark:block dark:md:hidden"
+                loading="eager"
+              />
+              <img
+                src="/logo-desktop-dark.svg"
+                alt="poshlane Logo Desktop Dark"
+                className="h-12 w-auto max-w-[200px] object-contain drop-shadow-md hidden dark:md:block"
+                loading="eager"
+              />
             </Link>
           </div>
           
