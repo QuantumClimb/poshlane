@@ -111,15 +111,15 @@ const MenuItemCard = ({ item, placeholderImg, isStoreClosed }: { item: MenuItem,
     <>
       {/* Mobile Layout - Vertical Card (Clickable) */}
       <Card 
-        className="md:hidden rounded-xl bg-card/50 backdrop-blur-sm border-primary/20 neon-glow overflow-hidden group menu-item-card cursor-pointer"
+        className="md:hidden flex flex-col rounded-xl bg-card border-border overflow-hidden group menu-item-card shadow-sm cursor-pointer"
         onClick={() => setShowModal(true)}
       >
         {/* Product Image */}
-        <div className="relative aspect-[3/4] overflow-hidden">
+        <div className="relative aspect-square overflow-hidden bg-gray-50/50 dark:bg-gray-900/20 p-4 flex items-center justify-center">
           <img
             src={imageUrl}
             alt={displayName}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
             onError={(e) => {
               e.currentTarget.src = placeholderImg;
             }}
@@ -127,13 +127,18 @@ const MenuItemCard = ({ item, placeholderImg, isStoreClosed }: { item: MenuItem,
         </div>
 
         {/* Content */}
-        <CardContent className="p-4">
-          <h4 className="text-base font-bold text-foreground dark:text-gray-200 mb-2">{displayName}</h4>
-          <p className="text-xs text-foreground/60 dark:text-gray-200 line-clamp-2 mb-3">{displayDescription}</p>
+        <CardContent className="p-3 flex flex-col flex-grow text-left">
+          <div className="mb-1">
+            <h4 className="text-sm font-semibold text-foreground dark:text-gray-200 line-clamp-1">{displayName}</h4>
+            {item.brand && <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{item.brand}</p>}
+          </div>
+          <p className="text-xs text-muted-foreground line-clamp-2 mb-3 flex-grow leading-relaxed">{displayDescription}</p>
           
-          <div className="flex items-center justify-between gap-2">
-            <span className="text-base font-bold text-accent">₹{(item.price / 100).toFixed(2)}</span>
-            <span className="text-xs text-muted-foreground">Tap for details</span>
+          <div className="flex items-center justify-between mt-auto pt-2 border-t border-border/50">
+            <span className="text-sm font-bold text-foreground">₹{(item.price / 100).toFixed(2)}</span>
+            <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <ShoppingCart className="w-3.5 h-3.5" />
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -260,31 +265,33 @@ const MenuItemCard = ({ item, placeholderImg, isStoreClosed }: { item: MenuItem,
       </Dialog>
 
       {/* Desktop Layout - Vertical Card */}
-      <Card className="hidden md:block rounded-xl md:rounded-3xl bg-card/50 backdrop-blur-sm border-primary/20 neon-glow overflow-hidden group menu-item-card">
+      <Card className="hidden md:flex flex-col rounded-2xl bg-card border-border overflow-hidden group menu-item-card shadow-sm hover:shadow-md transition-all duration-300">
         {/* Product Image */}
-        <div className="relative aspect-[3/4] overflow-hidden">
+        <div 
+          className="relative aspect-square overflow-hidden bg-gray-50/50 dark:bg-gray-900/20 p-8 flex items-center justify-center cursor-pointer" 
+          onClick={() => setShowModal(true)}
+        >
           <img
             src={imageUrl}
             alt={displayName}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
             onError={(e) => {
               e.currentTarget.src = placeholderImg;
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
-        <CardContent className="p-6">
-          <div className="flex justify-between items-start mb-3">
-            <h4 className="text-xl font-bold text-foreground dark:text-gray-200">{displayName}</h4>
-            <span className="text-lg font-bold text-accent">₹{(item.price / 100).toFixed(2)}</span>
+        
+        <CardContent className="p-5 flex flex-col flex-grow text-left">
+          <div className="mb-2 cursor-pointer" onClick={() => setShowModal(true)}>
+            <h4 className="text-lg font-semibold text-foreground dark:text-gray-200 line-clamp-1 hover:text-primary transition-colors">{displayName}</h4>
+            {item.brand && <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{item.brand}</p>}
           </div>
-          <p className="text-foreground/70 dark:text-gray-200 mb-4 leading-relaxed">{displayDescription}</p>
-          <div className="flex justify-between items-center gap-3">
-            <div className="flex items-center space-x-2 flex-1 min-w-0">
-              {item.namePt && (
-                <span className="text-sm text-muted-foreground italic truncate">{item.namePt}</span>
-              )}
-            </div>
+          
+          <p className="text-sm text-muted-foreground line-clamp-2 mb-4 flex-grow leading-relaxed">{displayDescription}</p>
+          
+          <div className="flex justify-between items-center pt-4 border-t border-border/50 mt-auto">
+            <span className="text-xl font-bold text-foreground">₹{(item.price / 100).toFixed(2)}</span>
             
             {/* Conditional rendering: Stepper if in cart, Add button otherwise */}
             {!isStoreClosed && (
@@ -300,10 +307,9 @@ const MenuItemCard = ({ item, placeholderImg, isStoreClosed }: { item: MenuItem,
                   <Button 
                     onClick={handleAddToCart}
                     size="sm"
-                    className="gap-1"
+                    className="rounded-full px-6 font-semibold"
                   >
-                    <ShoppingCart className="w-4 h-4" />
-                    Add
+                    Add to Bag
                   </Button>
                 )}
               </div>

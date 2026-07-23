@@ -150,7 +150,7 @@
   /* Mobile-specific styles */
   @media (max-width: 768px) {
     body {
-      text-align: center;
+      /* text-align: center; removed for professional layout */
     }
 
     section, div, main {
