@@ -365,9 +365,13 @@ const Menu = () => {
           <div className="text-center py-20 text-red-500">{error}</div>
         ) : (
           <Tabs defaultValue={defaultTab} className="space-y-8">
-            <TabsList className="inline-flex w-full justify-start overflow-x-auto bg-card/50 backdrop-blur-sm border-primary/20 md:flex-wrap gap-2 scrollbar-hide">
+            <TabsList className="inline-flex w-full justify-start overflow-x-auto bg-transparent border-none md:flex-wrap gap-2 md:gap-3 p-1 mb-2 scrollbar-hide">
               {tabs.map(({ key, value, category }) => (
-                <TabsTrigger key={key} value={value} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground whitespace-nowrap flex-shrink-0">
+                <TabsTrigger 
+                  key={key} 
+                  value={value} 
+                  className="rounded-full px-6 py-2.5 text-sm font-medium border border-border/60 bg-card text-muted-foreground transition-all hover:bg-accent/5 hover:text-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:shadow-md whitespace-nowrap flex-shrink-0"
+                >
                   {category.name}
                 </TabsTrigger>
               ))}
