@@ -16,7 +16,7 @@ export const useSEO = ({
   keywords,
   ogTitle,
   ogDescription,
-  ogImage = 'https://www.luxury-line.com/share-image.png',
+  ogImage = 'https://www.poshlane.com/share-image.png',
   canonicalUrl
 }: SEOProps) => {
   useEffect(() => {

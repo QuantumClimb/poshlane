@@ -168,7 +168,7 @@ const useCartStore = create<ExtendedCartStore>()(
       },
     }),
     {
-      name: 'luxury-line-cart',
+      name: 'poshlane-cart',
       version: 1,
     }
   )

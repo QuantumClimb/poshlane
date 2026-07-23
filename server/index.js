@@ -19,9 +19,9 @@ const prisma = new PrismaClient({
   log: ['warn', 'error']
 });
 
-// Luxury Line contact info
+// POSHLANE contact info
 const RESTAURANT_WHATSAPP = process.env.RESTAURANT_WHATSAPP || '+351920617185';
-const RESTAURANT_EMAIL = process.env.RESTAURANT_EMAIL || 'support@luxury-line.app';
+const RESTAURANT_EMAIL = process.env.RESTAURANT_EMAIL || 'support@poshlane.app';
 
 // RESEND TEST MODE: Send all emails to account owner until domain is verified
 // Set to true to test email flow, false for production with verified domain
