@@ -53,9 +53,15 @@ export const Navigation = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3" aria-label="poshlane Home">
               <img
-                src="/logo.png"
-                alt="poshlane Logo"
-                className="h-14 w-14 md:h-12 md:w-12 object-contain drop-shadow-md"
+                src="/logo.svg"
+                alt="poshlane Logo Mobile"
+                className="h-14 w-14 object-contain drop-shadow-md block md:hidden"
+                loading="eager"
+              />
+              <img
+                src="/logo-desktop.svg"
+                alt="poshlane Logo Desktop"
+                className="h-12 w-auto max-w-[200px] object-contain drop-shadow-md hidden md:block"
                 loading="eager"
               />
               <span className="text-2xl font-bold hidden md:inline text-gray-500">poshlane</span>

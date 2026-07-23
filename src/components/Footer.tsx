@@ -14,9 +14,14 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
               <img 
-                src="/logo.png" 
-                alt="poshlane Logo" 
-                className="h-12 w-12 object-contain"
+                src="/logo.svg" 
+                alt="poshlane Logo Mobile" 
+                className="h-12 w-12 object-contain block md:hidden"
+              />
+              <img 
+                src="/logo-desktop.svg" 
+                alt="poshlane Logo Desktop" 
+                className="h-12 w-auto max-w-[200px] object-contain hidden md:block"
               />
               <span className="text-3xl font-bold text-gray-500">poshlane</span>
             </div>
