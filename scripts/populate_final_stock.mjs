@@ -16,7 +16,7 @@ const fragrancesList = [
     middleNotes: "Peony, Cacao, Rose",
     baseNotes: "Patchouli",
     description: "Attrape-Rêves by Louis Vuitton is a vibrant, magical fragrance where soft cacao notes blend with fresh peony and lychee.",
-    imageFile: "LV-ATTRAPE-REVES.png"
+    imageFile: "LV-ATTRAPE-REVES.webp"
   },
   {
     name: "California Dream",
@@ -30,7 +30,7 @@ const fragrancesList = [
     middleNotes: "Ambrette (Musk Mallow), Pear",
     baseNotes: "Benzoin, Musk",
     description: "California Dream by Louis Vuitton captures the colors and ecstasy of a sunset over the West Coast with glowing mandarin and warm benzoin.",
-    imageFile: "LV_CALIFORNIA-DREAM.png"
+    imageFile: "LV_CALIFORNIA-DREAM.webp"
   },
   {
     name: "City of Stars",
@@ -44,7 +44,7 @@ const fragrancesList = [
     middleNotes: "Tiare Flower",
     baseNotes: "Powdery Notes, Musk, Sandalwood",
     description: "City of Stars by Louis Vuitton is an evening cologne celebrating Los Angeles nights with vibrant citrus and sensual tiare flower.",
-    imageFile: "LV-CITY-OF-STARS.png"
+    imageFile: "LV-CITY-OF-STARS.webp"
   },
   {
     name: "On The Beach",
@@ -58,7 +58,7 @@ const fragrancesList = [
     middleNotes: "Thyme, Rosemary, Pink Pepper, Sandalwood",
     baseNotes: "Cypress",
     description: "On The Beach by Louis Vuitton evokes the brightness of summer with rare Japanese Yuzu fruit and soothing aromatic herbs.",
-    imageFile: "LV-ON-THE-BEACH.png"
+    imageFile: "LV-ON-THE-BEACH.webp"
   },
   {
     name: "Pacific Chill",
@@ -72,7 +72,7 @@ const fragrancesList = [
     middleNotes: "May Rose, Basil, Carrot Seeds",
     baseNotes: "Dates, Fig, Ambrette",
     description: "Pacific Chill by Louis Vuitton is a detoxifying, refreshing blend inspired by California's vibrant coast, featuring mint, lemon, and blackcurrant.",
-    imageFile: "LV-PACIFIC_CHILL.png"
+    imageFile: "LV-PACIFIC_CHILL.webp"
   },
   {
     name: "Les Sables Roses",
@@ -86,7 +86,7 @@ const fragrancesList = [
     middleNotes: "Ambergris, Saffron",
     baseNotes: "Black Pepper",
     description: "Les Sables Roses by Louis Vuitton is an opulent contrast of hot desert sands and cool roses infused with rare natural Oud wood.",
-    imageFile: "LV_LES-SABLES-ROSES.png"
+    imageFile: "LV_LES-SABLES-ROSES.webp"
   },
   {
     name: "Ombre Nomade",
@@ -100,7 +100,7 @@ const fragrancesList = [
     middleNotes: "Rose, Raspberry",
     baseNotes: "Birch, Amberwood, Benzoin",
     description: "Ombre Nomade by Louis Vuitton is an intense, mystical scent crafted around pure Oud Assam and smoky frankincense.",
-    imageFile: "V-J-OMBRE-NOMADE.png"
+    imageFile: "V-J-OMBRE-NOMADE.webp"
   },
   {
     name: "Bitter Peach",
@@ -114,7 +114,7 @@ const fragrancesList = [
     middleNotes: "Rum, Cognac, Davana, Jasmine",
     baseNotes: "Indonesian Patchouli Leaf, Vanilla, Sandalwood, Tonka Bean",
     description: "Bitter Peach by Tom Ford is an intoxicating nectar of luscious peach steeped in rum and cognac, bursting with sensual richness.",
-    imageFile: "Bitter-Peach.png"
+    imageFile: "Bitter-Peach.webp"
   },
   {
     name: "Electric Cherry",
@@ -128,7 +128,7 @@ const fragrancesList = [
     middleNotes: "Jasmine Sambac",
     baseNotes: "Ambrettolide, Pink Pepper",
     description: "Electric Cherry by Tom Ford combines luscious Morello cherry with spicy ginger and intoxicating Jasmine Sambac.",
-    imageFile: "Electric-Cherry.png"
+    imageFile: "Electric-Cherry.webp"
   },
   {
     name: "Lost Cherry",
@@ -142,7 +142,7 @@ const fragrancesList = [
     middleNotes: "Sour Cherry, Turkish Rose, Jasmine Sambac, Plum",
     baseNotes: "Peru Balsam, Tonka Bean, Sandalwood, Vetiver, Cedar",
     description: "Lost Cherry by Tom Ford is a full-bodied journey into forbidden temptation with ripe black cherry and roasted tonka bean.",
-    imageFile: "Tom-Ford-Lost-Cherry.png"
+    imageFile: "Tom-Ford-Lost-Cherry.webp"
   },
   {
     name: "Vanilla Sex",
@@ -156,7 +156,7 @@ const fragrancesList = [
     middleNotes: "Vanilla, Floral Notes",
     baseNotes: "Vanilla Absolute, Ultravaniil™, Tonka Bean, Sandalwood",
     description: "Vanilla Sex by Tom Ford is an addictive, voluptuous fragrance showcasing deep vanilla tincture surrounded by soft florals.",
-    imageFile: "Tom-Ford-Vanilla-Sex.png"
+    imageFile: "Tom-Ford-Vanilla-Sex.webp"
   },
   {
     name: "Silver Mountain Water",
@@ -170,7 +170,7 @@ const fragrancesList = [
     middleNotes: "Green Tea, Black Currant",
     baseNotes: "Musk, Petitgrain, Sandalwood, Galbanum",
     description: "Silver Mountain Water by Creed evokes crisp mountain streams in the Swiss Alps with pure green tea and citrus.",
-    imageFile: "Silver-Mountain-Water.png"
+    imageFile: "Silver-Mountain-Water.webp"
   },
   {
     name: "Bleu De Chanel",
@@ -184,7 +184,7 @@ const fragrancesList = [
     middleNotes: "Ginger, Nutmeg, Jasmine, Iso E Super",
     baseNotes: "Incense, Vetiver, Cedar, Sandalwood, Patchouli, Labdanum, White Musk",
     description: "Bleu De Chanel is an iconic, timeless fragrance for the man who defies convention with a bold woody signature.",
-    imageFile: "Bleu-De-Chanel.png"
+    imageFile: "Bleu-De-Chanel.webp"
   },
   {
     name: "Coco Chanel",
@@ -198,7 +198,7 @@ const fragrancesList = [
     middleNotes: "Mimosa, Cloves, Orange Blossom, Clover, Rose",
     baseNotes: "Amber, Sandalwood, Tonka Bean, Civet, Opoponax, Vanilla",
     description: "Coco Chanel Eau de Parfum is an elegant amber composition blending baroque warmth with delicate floral spices.",
-    imageFile: "Coco_Chanel.png"
+    imageFile: "Coco_Chanel.webp"
   },
   {
     name: "1 Million",
@@ -212,7 +212,7 @@ const fragrancesList = [
     middleNotes: "Cinnamon, Rose, Spicy Notes",
     baseNotes: "Amber, Leather, Woody Notes, Indian Patchouli",
     description: "1 Million by Paco Rabanne is a seductive, flamboyant scent featuring cinnamon, blood mandarin, and rich leather.",
-    imageFile: "1-Million.png"
+    imageFile: "1-Million.webp"
   },
   {
     name: "Lady Million",
@@ -226,7 +226,7 @@ const fragrancesList = [
     middleNotes: "Jasmine, African Orange Flower, Gardenia",
     baseNotes: "White Honey, Patchouli, Amber",
     description: "Lady Million by Paco Rabanne is ultra-feminine, glamorous, and addictive with sweet white honey and glowing jasmine.",
-    imageFile: "Lady-Million.png"
+    imageFile: "Lady-Million.webp"
   },
   {
     name: "Acqua Di Gio",
@@ -240,7 +240,7 @@ const fragrancesList = [
     middleNotes: "Sea Notes, Jasmine, Calone, Peach, Freesia, Rosemary",
     baseNotes: "White Musk, Cedar, Oakmoss, Patchouli, Amber",
     description: "Acqua Di Gio by Giorgio Armani is the gold standard of fresh aquatic colognes, capturing Mediterranean sea air.",
-    imageFile: "Acqua_DI_Gio.png"
+    imageFile: "Acqua_DI_Gio.webp"
   },
   {
     name: "Because It's You",
@@ -254,7 +254,7 @@ const fragrancesList = [
     middleNotes: "Rose",
     baseNotes: "Vanilla, Musk, Amberwood",
     description: "Because It's You by Emporio Armani is a joyful, sparkling fragrance built on delicious raspberry, rose, and creamy vanilla.",
-    imageFile: "Because-of-You.png"
+    imageFile: "Because-of-You.webp"
   },
   {
     name: "Sì Passione",
@@ -268,7 +268,7 @@ const fragrancesList = [
     middleNotes: "Rose, Jasmine, Heliotrope, Pineapple",
     baseNotes: "Vanilla, Cedar, Amberwood, Patchouli",
     description: "Sì Passione by Giorgio Armani is an uncompromising red bouquet for the confident woman who says yes to passion.",
-    imageFile: "Si-Passione.png"
+    imageFile: "Si-Passione.webp"
   },
   {
     name: "Flora Gorgeous Gardenia",
@@ -282,7 +282,7 @@ const fragrancesList = [
     middleNotes: "Gardenia, Jasmine, Frangipani",
     baseNotes: "Brown Sugar, Patchouli",
     description: "Flora Gorgeous Gardenia by Gucci is a cheerful floral signature built around white Gardenia and sweet brown sugar.",
-    imageFile: "Gucci-Flora-Gardenia.png"
+    imageFile: "Gucci-Flora-Gardenia.webp"
   },
   {
     name: "Flora Gorgeous Jasmine",
@@ -296,7 +296,7 @@ const fragrancesList = [
     middleNotes: "Jasmine Grandiflorum, Magnolia, Damask Rose",
     baseNotes: "Australian Sandalwood, Benzoin, Patchouli",
     description: "Flora Gorgeous Jasmine by Gucci bursts with noble Jasmine Grandiflorum, soothing sandalwood, and sensual benzoin.",
-    imageFile: "Gucci-Flora-Jasmine.png"
+    imageFile: "Gucci-Flora-Jasmine.webp"
   },
   {
     name: "Gucci Guilty",
@@ -310,7 +310,7 @@ const fragrancesList = [
     middleNotes: "Lilac, Peach, Jasmine, Raspberry, Geranium",
     baseNotes: "White Musk, Amber, Patchouli, Vanilla",
     description: "Gucci Guilty Eau de Parfum is an oriental floral scent radiating freedom, featuring spiced pink pepper and rich lilac.",
-    imageFile: "Gucci-Guilty.png"
+    imageFile: "Gucci-Guilty.webp"
   },
   {
     name: "Black Opium",
@@ -324,7 +324,7 @@ const fragrancesList = [
     middleNotes: "Coffee, Jasmine, Bitter Almond, Licorice",
     baseNotes: "Vanilla, Patchouli, Cashmere Wood, Cedar",
     description: "Black Opium by YSL is a seductive coffee-rich floral scent filled with energy, sweet vanilla, and white flowers.",
-    imageFile: "YSL-Black-Opium.png"
+    imageFile: "YSL-Black-Opium.webp"
   },
   {
     name: "Mon Paris",
@@ -338,7 +338,7 @@ const fragrancesList = [
     middleNotes: "Peony, Jasmine Sambac, Chinese Jasmine, Datura, Orange Blossom",
     baseNotes: "Indonesian Patchouli Leaf, White Musk, Vanilla, Cedar, Moss",
     description: "Mon Paris by YSL is a modern romantic scent inspired by Paris, featuring sweet red berries and hypnotic datura flower.",
-    imageFile: "YSL-MON-PARIS.png"
+    imageFile: "YSL-MON-PARIS.webp"
   },
   {
     name: "Boss Bottled Silver",
@@ -352,7 +352,7 @@ const fragrancesList = [
     middleNotes: "Cinnamon, Mahogany, Carnation",
     baseNotes: "Vanilla, Sandalwood, Cedar, Vetiver",
     description: "Boss Bottled Silver Edition is a classic masculine scent of crisp red apple, warm cinnamon, and precious woods.",
-    imageFile: "Hugo_Boss_Silver.png"
+    imageFile: "Hugo_Boss_Silver.webp"
   },
   {
     name: "Burberry Eau de Parfum",
@@ -366,7 +366,7 @@ const fragrancesList = [
     middleNotes: "Jasmine, Sandalwood, Moss",
     baseNotes: "Vanilla, Cedar, Musk",
     description: "Burberry Eau de Parfum is simple and charming, combining juicy peach and apricot with warm sandalwood.",
-    imageFile: "Burberry.png"
+    imageFile: "Burberry.webp"
   },
   {
     name: "Fleur Musc",
@@ -380,7 +380,7 @@ const fragrancesList = [
     middleNotes: "Rose, Musk, Peony",
     baseNotes: "Patchouli, Violet, Amber",
     description: "Fleur Musc for Her by Narciso Rodriguez embodies vibrant passion with spicy pink pepper, rose bouquet, and signature musk.",
-    imageFile: "Fleur-Musc.png"
+    imageFile: "Fleur-Musc.webp"
   },
   {
     name: "Tam Dao",
@@ -394,7 +394,7 @@ const fragrancesList = [
     middleNotes: "Sandalwood, Cedar",
     baseNotes: "Brazilian Rosewood, Amber, White Musk",
     description: "Tam Dao by Diptyque is a tribute to Goa sandalwood, capturing sacred woody forests of Indochina with creaminess and cedar.",
-    imageFile: "Tam-Dao-Diptyque.png"
+    imageFile: "Tam-Dao-Diptyque.webp"
   },
   {
     name: "Kyoto",
@@ -408,7 +408,7 @@ const fragrancesList = [
     middleNotes: "Beetroot, Earthy Notes",
     baseNotes: "Amberwood",
     description: "Kyoto by Diptyque is a unique limited composition blending Japanese ikebana art, dark rose, incense, and earthy beetroot.",
-    imageFile: "Tam-Dao-Kyoto.png"
+    imageFile: "Tam-Dao-Kyoto.webp"
   },
   {
     name: "Bombshell",
@@ -422,7 +422,7 @@ const fragrancesList = [
     middleNotes: "Peony, Vanilla Orchid, Red Berries, Jasmine, Lily-of-the-Valley",
     baseNotes: "Musk, Woody Notes, Oakmoss",
     description: "Bombshell by Victoria's Secret is America's #1 fragrance, blending purple passion fruit with Shangri-La yellow peony.",
-    imageFile: "Victoria_Secret_Bombshell.png"
+    imageFile: "Victoria_Secret_Bombshell.webp"
   }
 ];
 
@@ -432,63 +432,63 @@ const electronicsList = [
     brand: "TechFit",
     priceInr: 3999,
     description: "High-definition AMOLED Display Smartwatch with heart rate monitoring, bluetooth calling, 100+ sports modes, and 7-day battery life.",
-    imageFile: "AMOLED-Watch.png"
+    imageFile: "AMOLED-Watch.webp"
   },
   {
     name: "Kalobee Smartwatch",
     brand: "Kalobee",
     priceInr: 3499,
     description: "Sleek Kalobee Smartwatch featuring HD touchscreen display, health sensors, custom watch faces, and water resistance.",
-    imageFile: "Kalobee.png"
+    imageFile: "Kalobee.webp"
   },
   {
     name: "Marv Neo Smartwatch (Black)",
     brand: "Marv",
     priceInr: 2499,
     description: "Marv Neo Smartwatch in Matte Black with ultra-bright display, dual-mode Bluetooth calling, and continuous SPO2 tracking.",
-    imageFile: "MARV-NEO-Black.png"
+    imageFile: "MARV-NEO-Black.webp"
   },
   {
     name: "Vega Neo Smartwatch",
     brand: "Vega",
     priceInr: 2999,
     description: "Vega Neo Premium Smartwatch featuring metallic casing, wireless charging, AI voice assistant support, and sleep tracking.",
-    imageFile: "Vega-NEO.png"
+    imageFile: "Vega-NEO.webp"
   },
   {
     name: "Tork Smartwatch",
     brand: "Tork",
     priceInr: 2799,
     description: "Tork Rugged Fitness Smartwatch with outdoor navigation assistance, multi-sport tracking, and durable alloy casing.",
-    imageFile: "TORK.png"
+    imageFile: "TORK.webp"
   },
   {
     name: "Shkod Wireless Earbuds (Black)",
     brand: "Shkod",
     priceInr: 1999,
     description: "Shkod True Wireless Earbuds in Stealth Black featuring deep bass drivers, low-latency gaming mode, and 30-hour total playback.",
-    imageFile: "SHKOD-Black.png"
+    imageFile: "SHKOD-Black.webp"
   },
   {
     name: "Shkod Wireless Earbuds (Grey)",
     brand: "Shkod",
     priceInr: 1999,
     description: "Shkod True Wireless Earbuds in Slate Grey with clear voice quad-mics, IPX5 sweat resistance, and instant fast pairing.",
-    imageFile: "SHKOD-GREY.png"
+    imageFile: "SHKOD-GREY.webp"
   },
   {
     name: "Skullcandy Push Active",
     brand: "Skullcandy",
     priceInr: 6999,
     description: "Skullcandy Push Active True Wireless Sport Earbuds with hands-free voice control, secure fit earhooks, and IP55 sweat resistance.",
-    imageFile: "Skullcandy-Push-Active.png"
+    imageFile: "Skullcandy-Push-Active.webp"
   },
   {
     name: "Skullcandy Sesh ANC",
     brand: "Skullcandy",
     priceInr: 5499,
     description: "Skullcandy Sesh ANC Noise-Canceling True Wireless Earbuds featuring active noise canceling, Stay-Aware mode, and 46 hours battery life.",
-    imageFile: "Skullcandy-SESH-ANC.png"
+    imageFile: "Skullcandy-SESH-ANC.webp"
   }
 ];
 
