@@ -32,8 +32,8 @@ export const MenuItemImage: React.FC<MenuItemImageProps> = ({
 
     // Priority 1: Database images via API endpoint
     if (menuItem.id && menuItem.imageUrl && menuItem.imageUrl !== placeholderUrl) {
-      // Check if it's already a full URL
-      if (menuItem.imageUrl.startsWith('http') || menuItem.imageUrl.startsWith('/api/')) {
+      // Check if it's already a full URL or static public path
+      if (menuItem.imageUrl.startsWith('http') || menuItem.imageUrl.startsWith('/api/') || menuItem.imageUrl.startsWith('/')) {
         return menuItem.imageUrl;
       }
       // Otherwise use API endpoint
