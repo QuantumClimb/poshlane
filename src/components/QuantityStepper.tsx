@@ -41,7 +41,7 @@ export const QuantityStepper: React.FC<QuantityStepperProps> = ({
   return (
     <div
       className={cn(
-        'inline-flex items-center justify-center bg-card border border-primary/30 rounded-lg shadow-sm',
+        'inline-flex items-center justify-center bg-card border border-neutral-300 dark:border-neutral-700 rounded-[5px] shadow-sm',
         sizeClasses[size],
         showAnimation && 'animate-in fade-in-0 zoom-in-95 duration-200',
         className
@@ -52,7 +52,7 @@ export const QuantityStepper: React.FC<QuantityStepperProps> = ({
         size="icon"
         onClick={onDecrement}
         className={cn(
-          'hover:bg-primary/10 hover:text-primary transition-colors rounded-l-lg',
+          'hover:bg-black hover:text-white transition-colors rounded-l-[5px]',
           buttonSizeClasses[size]
         )}
         aria-label="Decrease quantity"
@@ -74,7 +74,7 @@ export const QuantityStepper: React.FC<QuantityStepperProps> = ({
         size="icon"
         onClick={onIncrement}
         className={cn(
-          'hover:bg-primary/10 hover:text-primary transition-colors rounded-r-lg',
+          'hover:bg-black hover:text-white transition-colors rounded-r-[5px]',
           buttonSizeClasses[size]
         )}
         aria-label="Increase quantity"

@@ -25,7 +25,7 @@ export default function CheckoutStepIndicator({ currentStep }: CheckoutStepIndic
               {index < currentIndex ? (
                 <CheckCircle2 className="w-8 h-8 text-green-600" />
               ) : index === currentIndex ? (
-                <Circle className="w-8 h-8 text-blue-600 fill-blue-600" />
+                <Circle className="w-8 h-8 text-neutral-800 fill-neutral-800 dark:text-neutral-200 dark:fill-neutral-200" />
               ) : (
                 <Circle className="w-8 h-8 text-gray-300" />
               )}

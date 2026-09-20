@@ -1,7 +1,32 @@
 import 'dotenv/config';
 import { PrismaClient } from '@prisma/client';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const FINAL_STOCK_DIR = path.join(__dirname, '..', 'public', 'final_stock');
 
 const prisma = new PrismaClient();
+
+function getImageInfo(imageFile) {
+  const filePath = path.join(FINAL_STOCK_DIR, imageFile);
+  if (!fs.existsSync(filePath)) {
+    return { imageData: null, imageMimeType: null, imageSize: null };
+  }
+  const buffer = fs.readFileSync(filePath);
+  const ext = path.extname(imageFile).toLowerCase();
+  let mime = 'image/jpeg';
+  if (ext === '.webp') mime = 'image/webp';
+  else if (ext === '.png') mime = 'image/png';
+  
+  return {
+    imageData: buffer.toString('base64'),
+    imageMimeType: mime,
+    imageSize: buffer.length
+  };
+}
 
 const fragrancesList = [
   {
@@ -521,6 +546,7 @@ async function main() {
     let fragranceCount = 0;
     for (const f of fragrancesList) {
       const pricePaise = f.priceInr * 100;
+      const imgInfo = getImageInfo(f.imageFile);
       await prisma.product.create({
         data: {
           name: f.name,
@@ -537,6 +563,9 @@ async function main() {
           stockQuantity: 25,
           inStock: true,
           imageUrl: `/final_stock/${f.imageFile}`,
+          imageData: imgInfo.imageData,
+          imageMimeType: imgInfo.imageMimeType,
+          imageSize: imgInfo.imageSize,
           categoryId: fragrancesCategory.id
         }
       });
@@ -549,6 +578,7 @@ async function main() {
     let electronicsCount = 0;
     for (const e of electronicsList) {
       const pricePaise = e.priceInr * 100;
+      const imgInfo = getImageInfo(e.imageFile);
       await prisma.product.create({
         data: {
           name: e.name,
@@ -558,6 +588,9 @@ async function main() {
           stockQuantity: 15,
           inStock: true,
           imageUrl: `/final_stock/${e.imageFile}`,
+          imageData: imgInfo.imageData,
+          imageMimeType: imgInfo.imageMimeType,
+          imageSize: imgInfo.imageSize,
           categoryId: electronicsCategory.id
         }
       });

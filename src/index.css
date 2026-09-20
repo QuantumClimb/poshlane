@@ -6,43 +6,43 @@
 
 @layer base {
   :root {
-    /* Luxury Theme (OKLCH) - Cobalt Blue, Slate Grey, and Black */
-    --background-raw: 0.99 0.01 260;        /* Ice white/blue */
-    --foreground-raw: 0.15 0.0 0;           /* Black text */
+    /* Luxury Theme (OKLCH) - Neutral Grey and Deep Black (No Blue) */
+    --background-raw: 0.99 0.0 0;           /* Pure white */
+    --foreground-raw: 0.15 0.0 0;           /* Deep black text */
     --card-raw: 1.00 0.0 0;                 /* Pure white */
-    --card-foreground-raw: 0.15 0.0 0;      /* Black text */
-    --popover-raw: 1.00 0.0 0;              /* White */
+    --card-foreground-raw: 0.15 0.0 0;      /* Deep black text */
+    --popover-raw: 1.00 0.0 0;              /* Pure white */
     --popover-foreground-raw: 0.15 0.0 0;
-    --primary-raw: 0.45 0.16 260;           /* Cobalt Blue */
+    --primary-raw: 0.35 0.0 0;              /* Dark Grey */
     --primary-foreground-raw: 1.00 0 0;     /* White text */
-    --secondary-raw: 0.48 0.00 0;           /* Neutral Grey */
-    --secondary-foreground-raw: 1.00 0 0;   /* White text */
-    --muted-raw: 0.95 0.02 260;             /* Soft ice blue */
-    --muted-foreground-raw: 0.40 0.05 260;  /* Muted blue/grey */
-    --accent-raw: 0.40 0.00 0;              /* Slate Grey */
-    --accent-foreground-raw: 1.00 0 0;      /* White text */
+    --secondary-raw: 0.92 0.0 0;            /* Light Neutral Grey */
+    --secondary-foreground-raw: 0.15 0 0;   /* Black text */
+    --muted-raw: 0.96 0.0 0;                /* Neutral light grey */
+    --muted-foreground-raw: 0.45 0.0 0;     /* Muted neutral grey */
+    --accent-raw: 0.90 0.0 0;               /* Slate Light Grey */
+    --accent-foreground-raw: 0.15 0 0;      /* Black text */
     --destructive-raw: 0.58 0.19 25;        /* Red */
     --destructive-foreground-raw: 1.00 0 0;
-    --border-raw: 0.90 0.02 260;            /* Light blue border */
-    --input-raw: 0.95 0.02 260;             /* Light input */
-    --ring-raw: 0.45 0.16 260;              /* Cobalt blue focus ring */
+    --border-raw: 0.90 0.0 0;               /* Light grey border */
+    --input-raw: 0.95 0.0 0;                /* Light grey input */
+    --ring-raw: 0.20 0.0 0;                 /* Dark grey/black focus ring */
     
     /* Charts */
-    --chart-1-raw: 0.45 0.16 260;           /* Cobalt Blue */
-    --chart-2-raw: 0.48 0.00 0;             /* Neutral Grey */
+    --chart-1-raw: 0.35 0.0 0;              /* Charcoal */
+    --chart-2-raw: 0.55 0.0 0;              /* Neutral Grey */
     --chart-3-raw: 0.15 0.0 0;              /* Black */
-    --chart-4-raw: 0.40 0.00 0;             /* Slate Grey */
-    --chart-5-raw: 0.65 0.10 260;           /* Soft blue */
+    --chart-4-raw: 0.75 0.0 0;              /* Light Grey */
+    --chart-5-raw: 0.85 0.0 0;              /* Soft Grey */
     
     /* Sidebar */
-    --sidebar-background-raw: 0.98 0.01 260;
+    --sidebar-background-raw: 0.98 0.0 0;
     --sidebar-foreground-raw: 0.15 0.0 0;
-    --sidebar-primary-raw: 0.45 0.16 260;
+    --sidebar-primary-raw: 0.35 0.0 0;
     --sidebar-primary-foreground-raw: 1.00 0 0;
-    --sidebar-accent-raw: 0.48 0.00 0;
-    --sidebar-accent-foreground-raw: 1.00 0 0;
-    --sidebar-border-raw: 0.90 0.02 260;
-    --sidebar-ring-raw: 0.45 0.16 260;
+    --sidebar-accent-raw: 0.90 0.0 0;
+    --sidebar-accent-foreground-raw: 0.15 0.0 0;
+    --sidebar-border-raw: 0.90 0.0 0;
+    --sidebar-ring-raw: 0.20 0.0 0;
 
     /* Derived OKLCH colors from raw */
     --background: oklch(var(--background-raw));
@@ -80,11 +80,11 @@
     --sidebar-border: oklch(var(--sidebar-border-raw));
     --sidebar-ring: oklch(var(--sidebar-ring-raw));
 
-    /* Fonts and radius */
+    /* Fonts and global 5px radius */
     --font-sans: 'IBM Plex Sans', sans-serif;
     --font-serif: 'IBM Plex Sans', sans-serif;
     --font-mono: 'IBM Plex Sans', sans-serif;
-    --radius: 0.375rem;
+    --radius: 5px;
 
     /* Shadows */
     --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
@@ -96,35 +96,35 @@
   }
 
   .dark {
-    /* Dark mode - Black & Slate Grey */
-    --background-raw: 0.15 0.0 0;                   /* Deep black/dark grey */
+    /* Dark mode - Deep Black & Mid Grey */
+    --background-raw: 0.12 0.0 0;                   /* Deep black */
     --foreground-raw: 0.98 0.0 0;                   /* White text */
-    --card-raw: 0.20 0.0 0;                         /* Dark grey cards */
+    --card-raw: 0.18 0.0 0;                         /* Dark grey cards */
     --card-foreground-raw: 0.98 0.0 0;              
-    --popover-raw: 0.20 0.0 0;
+    --popover-raw: 0.18 0.0 0;
     --popover-foreground-raw: 0.98 0.0 0;
-    --primary-raw: 0.55 0.16 260;                   /* Bright Cobalt Blue */
+    --primary-raw: 0.60 0.0 0;                      /* Mid Grey */
     --primary-foreground-raw: 1.00 0 0;
-    --secondary-raw: 0.35 0.00 0;                   /* Dark Slate Grey */
+    --secondary-raw: 0.25 0.0 0;                    /* Dark Neutral Grey */
     --secondary-foreground-raw: 1.00 0 0;
-    --muted-raw: 0.30 0.0 0;                        /* Muted dark grey */
-    --muted-foreground-raw: 0.70 0.0 0;             
-    --accent-raw: 0.30 0.00 0;                      /* Dark Neutral Grey */
+    --muted-raw: 0.22 0.0 0;                        /* Muted dark grey */
+    --muted-foreground-raw: 0.65 0.0 0;             
+    --accent-raw: 0.25 0.0 0;                       /* Dark Neutral Grey */
     --accent-foreground-raw: 1.00 0 0;              
     --destructive-raw: 0.58 0.19 25;                
     --destructive-foreground-raw: 1.00 0 0;
-    --border-raw: 0.30 0.0 0;                       /* Dark grey border */
-    --input-raw: 0.30 0.0 0;                        
-    --ring-raw: 0.55 0.16 260;                      /* Cobalt Blue ring */
+    --border-raw: 0.25 0.0 0;                       /* Dark grey border */
+    --input-raw: 0.25 0.0 0;                        
+    --ring-raw: 0.60 0.0 0;                         /* Ring */
     
-    --sidebar-background-raw: 0.18 0.0 0;
+    --sidebar-background-raw: 0.15 0.0 0;
     --sidebar-foreground-raw: 0.98 0.0 0;
-    --sidebar-primary-raw: 0.55 0.16 260;
+    --sidebar-primary-raw: 0.60 0.0 0;
     --sidebar-primary-foreground-raw: 1.00 0 0;
-    --sidebar-accent-raw: 0.35 0.00 0;
+    --sidebar-accent-raw: 0.25 0.0 0;
     --sidebar-accent-foreground-raw: 1.00 0 0;
-    --sidebar-border-raw: 0.30 0.0 0;
-    --sidebar-ring-raw: 0.55 0.16 260;
+    --sidebar-border-raw: 0.25 0.0 0;
+    --sidebar-ring-raw: 0.60 0.0 0;
   }
 }
 
@@ -140,7 +140,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     font-weight: normal;
-    color: oklch(var(--primary-raw));
+    color: oklch(var(--foreground-raw));
   }
 
   button {
