@@ -1,6 +1,4 @@
-
 import { MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export const WhatsAppButton = () => {
   const handleWhatsApp = () => {
@@ -11,12 +9,13 @@ export const WhatsAppButton = () => {
   };
 
   return (
-    <Button
+    <button
       onClick={handleWhatsApp}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-secondary hover:bg-secondary/90 shadow-lg neon-glow animate-float"
-      size="sm"
+      className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-[#4B35E8] to-[#6638FF] text-white flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(104,56,255,0.5)] hover:scale-105 active:scale-95 transition-all duration-200"
+      aria-label="Customer Support Chat"
+      title="Contact Customer Support"
     >
-      <MessageCircle className="w-6 h-6 text-secondary-foreground" />
-    </Button>
+      <MessageCircle className="w-5 h-5 text-white" />
+    </button>
   );
 };

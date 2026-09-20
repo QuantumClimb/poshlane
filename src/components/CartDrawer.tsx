@@ -162,17 +162,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   };
 
   const defaultTrigger = (
-    <Button variant="ghost" size="icon" className="relative w-auto h-auto p-2 hover:bg-transparent" style={{ color: '#D4AF37' }}>
-      <ShoppingBag className="w-10 h-10 md:w-6 md:h-6" />
+    <button className="relative p-2 text-white/80 hover:text-white transition-colors" title="Shopping Bag">
+      <ShoppingBag className="w-5 h-5" />
       {itemCount > 0 && (
-        <Badge 
-          variant="destructive" 
-          className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
-        >
+        <span className="absolute top-1 right-1 bg-[#6838FF] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
           {itemCount > 99 ? '99+' : itemCount}
-        </Badge>
+        </span>
       )}
-    </Button>
+    </button>
   );
 
   return (
@@ -180,16 +177,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       <SheetTrigger asChild>
         {trigger || defaultTrigger}
       </SheetTrigger>
-      <SheetContent className="w-full sm:max-w-lg">
+      <SheetContent className="w-full sm:max-w-lg bg-[#11141A] border-l border-white/10 text-white">
         <SheetHeader>
-          <SheetTitle className="flex items-center justify-between">
+          <SheetTitle className="flex items-center justify-between text-white">
             <span>{t('cart.title')} ({itemCount} {t('cart.items')})</span>
             {items.length > 0 && (
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={clearCart}
-                className="text-destructive hover:text-destructive"
+                className="text-red-400 hover:text-red-300 hover:bg-white/5"
               >
                 <Trash2 className="w-4 h-4 mr-1" />
                 {t('cart.clear')}
@@ -202,9 +199,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           {items.length === 0 ? (
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
-                <ShoppingBag className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
-                <p className="text-muted-foreground">{t('cart.emptyCart')}</p>
-                <p className="text-sm text-muted-foreground mt-1">
+                <ShoppingBag className="w-12 h-12 mx-auto text-[#9BA1B0] mb-4" />
+                <p className="text-[#9BA1B0] text-sm">{t('cart.emptyCart')}</p>
+                <p className="text-xs text-[#9BA1B0]/70 mt-1">
                   {t('cart.emptyCartMessage')}
                 </p>
               </div>
@@ -222,30 +219,37 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
               </ScrollArea>
 
-              <div className="border-t pt-4 space-y-4 flex-shrink-0">
+              <div className="border-t border-white/10 pt-4 space-y-4 flex-shrink-0">
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-xs text-[#9BA1B0]">
                     <span>{t('cart.subtotal')} ({itemCount} {t('cart.items')})</span>
-                    <span>₹{(total / 100).toFixed(2)}</span>
+                    <span className="text-white font-medium">₹{(total / 100).toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-sm text-muted-foreground">
+                  <div className="flex justify-between text-xs text-[#9BA1B0]">
                     <span>{t('cart.deliveryFee')}</span>
-                    <span>₹2.50</span>
+                    <span className="text-white font-medium">₹2.50</span>
                   </div>
-                  <Separator />
-                  <div className="flex justify-between font-bold text-lg">
+                  <Separator className="bg-white/10" />
+                  <div className="flex justify-between font-bold text-base text-white pt-1">
                     <span>{t('cart.total')}</span>
-                    <span>₹{(total / 100 + 2.50).toFixed(2)}</span>
+                    <span className="text-[#6838FF]">₹{(total / 100 + 2.50).toFixed(2)}</span>
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                    <Button className="w-full" size="lg" onClick={handleWhatsAppBooking}>
-                      {t('cart.bookViaWhatsApp')}
-                    </Button>
-                  <Button variant="outline" className="w-full" onClick={() => setOpen(false)}>
+                <div className="space-y-2 pt-2">
+                  <button
+                    onClick={handleWhatsAppBooking}
+                    className="w-full h-11 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-[#4B35E8] to-[#6638FF] hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-[0_0_20px_rgba(104,56,255,0.4)]"
+                  >
+                    <ShoppingBag className="w-4 h-4" />
+                    <span>{t('cart.bookViaWhatsApp')}</span>
+                  </button>
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="w-full h-10 rounded-lg text-xs font-medium text-[#9BA1B0] hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all"
+                  >
                     {t('cart.continueShopping')}
-                  </Button>
+                  </button>
                 </div>
               </div>
             </>
