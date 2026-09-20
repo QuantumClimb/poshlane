@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useWishlist = () => {
-  const [wishlist, setWishlist] = useState<number[]>(() => {
+  const [wishlist, setWishlist] = useState<(string | number)[]>(() => {
     try {
       const saved = localStorage.getItem('poshlane_wishlist');
       return saved ? JSON.parse(saved) : [];
@@ -30,13 +30,13 @@ export const useWishlist = () => {
     return () => window.removeEventListener('wishlist-updated', handleStorageChange);
   }, []);
 
-  const toggleWishlist = (id: number) => {
+  const toggleWishlist = (id: string | number) => {
     setWishlist(prev => 
       prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
     );
   };
 
-  const isWishlisted = (id: number) => wishlist.includes(id);
+  const isWishlisted = (id: string | number) => wishlist.includes(id);
 
   return { wishlist, toggleWishlist, isWishlisted, wishlistCount: wishlist.length };
 };
